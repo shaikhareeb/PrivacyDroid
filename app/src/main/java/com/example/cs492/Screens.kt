@@ -1,5 +1,7 @@
 package com.example.cs492
 
+import com.example.cs492.data.app_permission.AppPermissionType
+
 sealed class Screen(val route: String, var drawerItem: Int = 0) {
 
     // Auth Screens
@@ -10,9 +12,21 @@ sealed class Screen(val route: String, var drawerItem: Int = 0) {
 
     // Main App Screens
     object Home: Screen("home", 0)
-
     object AppPermission: Screen("app_permissions", 1)
     object AndroidSettings: Screen("android_settings", 2)
     object BlogSection: Screen("blog_section", 3)
     object AppMarketplace: Screen("app_marketplaces", 4)
+
+
+    // App Permission
+    object AppPermissionOverview : Screen("app_permission_overview/{permissionType}", drawerItem = 1) {
+        fun createRoute(permissionType: AppPermissionType) = "app_permission_overview/$permissionType"
+    }
+    object AppPermissionList : Screen("app_permission_list/{permissionType}", drawerItem = 1) {
+        fun createRoute(permissionType: AppPermissionType) = "app_permission_list/$permissionType"
+    }
+    object AppPermissionBreakdown : Screen("app_permission_list/{permission}", drawerItem = 1) {
+        fun createRoute(permission: String) = "app_permission_list/$permission"
+    }
+    object AppPermissionTypesOfPermissions: Screen("app_permission_types", drawerItem = 1)
 }

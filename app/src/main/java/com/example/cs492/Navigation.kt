@@ -8,7 +8,10 @@ import androidx.navigation.compose.composable
 import com.example.cs492.components.NavigationDrawerWrapper
 import com.example.cs492.features.android_settings_walk_through.screens.BlogSectionHomeScreen
 import com.example.cs492.features.app_marketplaces.screens.AppMarketplaceHomeScreen
+import com.example.cs492.features.app_permissions.screens.AppPermissionBreakdownScreen
 import com.example.cs492.features.app_permissions.screens.AppPermissionHomeScreen
+import com.example.cs492.features.app_permissions.screens.AppPermissionListScreen
+import com.example.cs492.features.app_permissions.screens.AppPermissionTypesScreen
 import com.example.cs492.features.blog_section.screens.AndroidSettingsHomeScreen
 import com.example.cs492.features.home.screens.HomeScreen
 import com.example.cs492.firebaseauth.screens.InitialAuthScreen
@@ -37,7 +40,7 @@ fun Navigation(
         }
         // Actual Features:
         composable(Screen.AppPermission.route) {
-            NavigationDrawerWrapper(navController = navController, children = { AppPermissionHomeScreen() }, itemIndex = Screen.AppPermission.drawerItem)
+            NavigationDrawerWrapper(navController = navController, children = { AppPermissionHomeScreen(navController) }, itemIndex = Screen.AppPermission.drawerItem)
         }
         composable(Screen.AndroidSettings.route) {
             NavigationDrawerWrapper(navController = navController, children = { AndroidSettingsHomeScreen() }, itemIndex = Screen.AndroidSettings.drawerItem)
@@ -47,6 +50,33 @@ fun Navigation(
         }
         composable(Screen.AppMarketplace.route) {
             NavigationDrawerWrapper(navController = navController, children = { AppMarketplaceHomeScreen() }, itemIndex = Screen.AppMarketplace.drawerItem)
+        }
+
+
+        // App Permission Routes:
+        composable(Screen.AppPermissionOverview.route) {
+            NavigationDrawerWrapper(
+                navController = navController,
+                children = { AppPermissionHomeScreen(navController) },
+                itemIndex = Screen.AppPermissionOverview.drawerItem)
+        }
+        composable(Screen.AppPermissionList.route) {
+            NavigationDrawerWrapper(
+                navController = navController,
+                children = { AppPermissionListScreen(navController) },
+                itemIndex = Screen.AppPermissionList.drawerItem)
+        }
+        composable(Screen.AppPermissionBreakdown.route) {
+            NavigationDrawerWrapper(
+                navController = navController,
+                children = { AppPermissionBreakdownScreen(navController) },
+                itemIndex = Screen.AppPermissionBreakdown.drawerItem)
+        }
+        composable(Screen.AppPermissionTypesOfPermissions.route) {
+            NavigationDrawerWrapper(
+                navController = navController,
+                children = { AppPermissionTypesScreen(navController) },
+                itemIndex = Screen.AppPermissionTypesOfPermissions.drawerItem)
         }
     }
 }

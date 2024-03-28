@@ -20,7 +20,7 @@ import com.example.cs492.components.StandardText
 import com.example.cs492.data.app_permission.AppPermissionType
 
 @Composable
-fun AppPermissionHomeScreen(
+fun AppPermissionTypesScreen(
     navController: NavController,
 ) {
     Surface(
