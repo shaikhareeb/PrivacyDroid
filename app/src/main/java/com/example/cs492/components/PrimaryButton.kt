@@ -21,7 +21,7 @@ fun PrimaryButton(
 ) {
     Button(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(50.dp),
+        shape = RoundedCornerShape(8.dp),
         colors = ButtonDefaults.buttonColors(Color.Black),
         onClick = onClick,
     ) {

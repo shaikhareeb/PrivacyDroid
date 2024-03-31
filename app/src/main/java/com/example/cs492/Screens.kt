@@ -1,6 +1,7 @@
 package com.example.cs492
 
 import com.example.cs492.data.app_permission.AppPermissionType
+import com.example.cs492.data.app_permission.Permission
 
 sealed class Screen(val route: String, var drawerItem: Int = 0) {
 
@@ -19,8 +20,8 @@ sealed class Screen(val route: String, var drawerItem: Int = 0) {
 
 
     // App Permission
-    object AppPermissionOverview : Screen("app_permission_overview/{permissionType}", drawerItem = 1) {
-        fun createRoute(permissionType: AppPermissionType) = "app_permission_overview/$permissionType"
+    object AppPermissionOverview : Screen("app_permission_overview/{permission}", drawerItem = 1) {
+        fun createRoute(permission: Permission) = "app_permission_overview/$permission"
     }
     object AppPermissionList : Screen("app_permission_list/{permissionType}", drawerItem = 1) {
         fun createRoute(permissionType: AppPermissionType) = "app_permission_list/$permissionType"

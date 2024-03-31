@@ -1,12 +1,12 @@
 package com.example.cs492.features.home.screens
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.cs492.R
-import com.example.cs492.components.ExpandableCardList
+import com.example.cs492.components.ExpandableCard
 import com.example.cs492.components.StandardText
 import com.example.cs492.features.home.data.HomePageCardData
 
@@ -30,37 +30,41 @@ fun HomeScreen(
 ) {
 
     return Surface {
-        Column (
+        LazyColumn (
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxSize()
                 .padding(20.dp)
         ){
-
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(
-                    imageVector = ImageVector.vectorResource(id = R.drawable.privacy_tip_24),
-                    contentDescription = "App Logo",
-                    modifier = Modifier
-                        .height(30.dp)
-                        .width(30.dp)
-                )
-                Text(
-                    modifier = Modifier.padding(20.dp),
-                    text = "Privacy Helper",
-                    fontSize = 25.sp,
-                    fontWeight = FontWeight.Medium
+            item {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(id = R.drawable.privacy_tip_24),
+                        contentDescription = "App Logo",
+                        modifier = Modifier
+                            .height(30.dp)
+                            .width(30.dp)
+                    )
+                    Text(
+                        modifier = Modifier.padding(20.dp),
+                        text = "Privacy Helper",
+                        fontSize = 25.sp,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
+            }
+            item {
+                StandardText(
+                    value = "Take Control, Not Chances: Safeguard Your Privacy in a Click-Driven World",
+                    fontSize = 16.sp
                 )
             }
-            StandardText(
-                value = "Take Control, Not Chances: Safeguard Your Privacy in a Click-Driven World",
-                fontSize = 14.dp
-            )
-            ExpandableCardList(
-                navController = navController,
-                items = HomePageCardData
-            )
+            HomePageCardData.forEach{
+                item {
+                    ExpandableCard(navController = navController, cardData = it)
+                }
+            }
         }
     }
 }

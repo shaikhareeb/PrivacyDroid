@@ -4,9 +4,9 @@ class AppPermissionData {
 }
 
 enum class AppPermissionType(private val role: String) {
-    NORMAL("normal"),
-    DANGEROUS("dangerous"),
-    SIGNATURE("signature");
+    NORMAL("Normal"),
+    DANGEROUS("Dangerous"),
+    SIGNATURE("Signature");
     override fun toString(): String {
         return role
     }
@@ -19,7 +19,6 @@ enum class Permission(private val permissionName: String, private val type: AppP
     ACCESS_NETWORK_STATE("android.permission.ACCESS_NETWORK_STATE", AppPermissionType.NORMAL),
     ACCESS_WIFI_STATE("android.permission.ACCESS_WIFI_STATE", AppPermissionType.NORMAL),
     SET_ALARM("android.permission.SET_ALARM", AppPermissionType.NORMAL),
-    VIBRATE("android.permission.VIBRATE", AppPermissionType.NORMAL),
     WAKE_LOCK("android.permission.WAKE_LOCK", AppPermissionType.NORMAL),
     RECEIVE_BOOT_COMPLETED("android.permission.RECEIVE_BOOT_COMPLETED", AppPermissionType.NORMAL),
     BLUETOOTH("android.permission.BLUETOOTH", AppPermissionType.NORMAL),

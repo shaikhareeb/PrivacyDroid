@@ -3,8 +3,10 @@ package com.example.cs492
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
 import com.example.cs492.components.NavigationDrawerWrapper
 import com.example.cs492.features.android_settings_walk_through.screens.BlogSectionHomeScreen
 import com.example.cs492.features.app_marketplaces.screens.AppMarketplaceHomeScreen
@@ -36,7 +38,7 @@ fun Navigation(
 
         // Home Screens
         composable(Screen.Home.route) {
-            NavigationDrawerWrapper(navController = navController, children = { HomeScreen() }, itemIndex = Screen.Home.drawerItem)
+            NavigationDrawerWrapper(navController = navController, children = { HomeScreen(navController) }, itemIndex = Screen.Home.drawerItem)
         }
         // Actual Features:
         composable(Screen.AppPermission.route) {
@@ -60,12 +62,19 @@ fun Navigation(
                 children = { AppPermissionHomeScreen(navController) },
                 itemIndex = Screen.AppPermissionOverview.drawerItem)
         }
-        composable(Screen.AppPermissionList.route) {
+
+        composable(
+            route = Screen.AppPermissionList.route,
+            arguments = listOf(navArgument("permissionType") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val permissionTypeArg = backStackEntry.arguments?.getString("permissionType") ?: "DEFAULT_VALUE"
             NavigationDrawerWrapper(
                 navController = navController,
-                children = { AppPermissionListScreen(navController) },
-                itemIndex = Screen.AppPermissionList.drawerItem)
+                children = { AppPermissionListScreen(navController, permissionTypeArg) },
+                itemIndex = Screen.AppPermissionList.drawerItem
+            )
         }
+
         composable(Screen.AppPermissionBreakdown.route) {
             NavigationDrawerWrapper(
                 navController = navController,

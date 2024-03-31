@@ -1,23 +1,20 @@
 package com.example.cs492.features.app_permissions.screens
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.cs492.Screen
-import com.example.cs492.components.PrimaryButton
-import com.example.cs492.components.SecondaryButton
+import com.example.cs492.components.ExpandableCard
 import com.example.cs492.components.StandardText
-import com.example.cs492.data.app_permission.AppPermissionType
+import com.example.cs492.features.home.data.PermissionTypeCardData
 
 @Composable
 fun AppPermissionTypesScreen(
@@ -30,35 +27,22 @@ fun AppPermissionTypesScreen(
             .background(Color.White)
             .padding(28.dp)
     ) {
-        Column(
-            modifier = Modifier.fillMaxSize()
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                StandardText(value = "App Permissions", fontSize = 20.dp)
-                StandardText(value = "There's a lot of permissions you don't know about", fontSize = 14.dp)
-                StandardText(value = "Pick one of 4 categories to learn more: ", fontSize = 14.dp)
-            }
-            Spacer(modifier = Modifier.height(25.dp))
-            Column {
-                PrimaryButton(
-                    text = "Types of Permissions?",
-                    onClick = { navController.navigate(Screen.AppPermissionTypesOfPermissions.route)}
-                )
-                SecondaryButton(
-                    text = "Normal Permissions",
-                    onClick = { navController.navigate(Screen.AppPermissionOverview.createRoute(AppPermissionType.NORMAL))}
-                )
-                SecondaryButton(
-                    text = "Dangerous Permissions",
-                    onClick = { navController.navigate(Screen.AppPermissionOverview.createRoute(AppPermissionType.DANGEROUS))}
-                )
-                SecondaryButton(
-                    text = "Signature Permissions",
-                    onClick = { navController.navigate(Screen.AppPermissionOverview.createRoute(AppPermissionType.SIGNATURE))}
-                )
-            }
+                item { StandardText(value = "App Permissions - Types", fontSize = 18.sp) }
+                item {
+                    StandardText(
+                        value = """
+                        Explore the different types of app permissions on Android, including Install-time, Runtime, and Special permissions. Each has a specific role in how apps interact and access your information. 
+                        """.trimIndent(), fontSize = 14.sp)
+                }
+                item { StandardText(value = "Select one of the 3 to learn more: ", fontSize = 16.sp) }
+
+                PermissionTypeCardData.forEach {
+                    item { ExpandableCard(navController = navController, cardData = it) }
+                }
         }
     }
 }
