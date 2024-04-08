@@ -760,7 +760,7 @@ val PrivacyCardData: List<ExpandableHeaderCardData> = listOf(
                 append("Settings > Privacy > Special App Access.\n\n")
                 pop()
             }
-            append("Here, you’ll find access that doesn’t fit into traditional permissions, like modifying system settings or accessing usage data.\n\n")
+            append("Here, you’ll find access that doesn't fit into traditional permissions, like modifying system settings or accessing usage data.\n\n")
             append("Grant or deny these permissions based on your usage and trust in an app.\n\n")
             append("Special App Access should be granted sparingly and to trusted applications only.")
         }
