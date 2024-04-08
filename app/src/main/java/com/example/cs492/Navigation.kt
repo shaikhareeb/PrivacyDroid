@@ -28,7 +28,7 @@ fun Navigation(
     modifier: Modifier,
     navController: NavHostController,
 ) {
-    var start: String = if (!loggedIn) Screen.InitialAuthScreen.route else Screen.Home.route
+    val start: String = if (!loggedIn) Screen.InitialAuthScreen.route else Screen.Home.route
 
     return NavHost(navController = navController, startDestination = start, modifier = modifier) {
         // Auth Screens
@@ -49,7 +49,7 @@ fun Navigation(
             NavigationDrawerWrapper(navController = navController, children = { AndroidSettingsHomeScreen(navController) }, itemIndex = Screen.AndroidSettings.drawerItem)
         }
         composable(Screen.BlogSection.route) {
-            NavigationDrawerWrapper(navController = navController, children = { BlogSectionHomeScreen() }, itemIndex = Screen.BlogSection.drawerItem)
+            NavigationDrawerWrapper(navController = navController, children = { BlogSectionHomeScreen(navController) }, itemIndex = Screen.BlogSection.drawerItem)
         }
         composable(Screen.AppMarketplace.route) {
             NavigationDrawerWrapper(navController = navController, children = { AppMarketplaceHomeScreen() }, itemIndex = Screen.AppMarketplace.drawerItem)
