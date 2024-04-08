@@ -39,7 +39,7 @@ fun BlogSectionHomeScreen(
                     value = """
                     In today's digital age, where convenience often comes at the cost of privacy, understanding how our favorite apps handle our personal data is more critical than ever. In this section, we delve into the world of app privacy, shining a light on some of the most popular apps and their past transgressions. 
 
-                    From data breaches to controversial data-sharing practices, we uncover the privacy abuses that have made headlines and sparked important conversations about digital ethics. 
+                    From permission violations to controversial data-sharing practices, we uncover the privacy abuses that have made headlines and sparked important conversations about digital ethics. 
                 """.trimIndent(), fontSize = 14.sp
                 )
             }
