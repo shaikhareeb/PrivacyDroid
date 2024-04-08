@@ -8,13 +8,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.cs492.components.NavigationDrawerWrapper
-import com.example.cs492.features.android_settings_walk_through.screens.BlogSectionHomeScreen
+import com.example.cs492.features.blog_section.screens.BlogSectionHomeScreen
 import com.example.cs492.features.app_marketplaces.screens.AppMarketplaceHomeScreen
 import com.example.cs492.features.app_permissions.screens.AppPermissionBreakdownScreen
 import com.example.cs492.features.app_permissions.screens.AppPermissionHomeScreen
 import com.example.cs492.features.app_permissions.screens.AppPermissionListScreen
 import com.example.cs492.features.app_permissions.screens.AppPermissionTypesScreen
-import com.example.cs492.features.blog_section.screens.AndroidSettingsHomeScreen
+import com.example.cs492.features.android_settings_walk_through.screens.AndroidSettingsHomeScreen
 import com.example.cs492.features.home.screens.HomeScreen
 import com.example.cs492.firebaseauth.screens.InitialAuthScreen
 import com.example.cs492.firebaseauth.screens.LoginScreen
@@ -48,7 +48,7 @@ fun Navigation(
             NavigationDrawerWrapper(navController = navController, children = { AndroidSettingsHomeScreen() }, itemIndex = Screen.AndroidSettings.drawerItem)
         }
         composable(Screen.BlogSection.route) {
-            NavigationDrawerWrapper(navController = navController, children = { BlogSectionHomeScreen() }, itemIndex = Screen.BlogSection.drawerItem)
+            NavigationDrawerWrapper(navController = navController, children = { BlogSectionHomeScreen(navController) }, itemIndex = Screen.BlogSection.drawerItem)
         }
         composable(Screen.AppMarketplace.route) {
             NavigationDrawerWrapper(navController = navController, children = { AppMarketplaceHomeScreen() }, itemIndex = Screen.AppMarketplace.drawerItem)

@@ -11,7 +11,10 @@ import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.material.icons.filled.Camera
+import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.ContactPhone
+import androidx.compose.material.icons.filled.Facebook
 import androidx.compose.material.icons.filled.InstallMobile
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Lock
@@ -328,7 +331,7 @@ val NormalPermissionCardData: List<ExpandableHeaderCardData> = listOf(
     ),
     // Foreground Service
     ExpandableHeaderCardData(
-        headerText = "Forground Service Permission",
+        headerText = "Foreground Service Permission",
         icon = ImageType.Vector(Icons.Filled.RunCircle),
         iconContentDescription = "Foreground service icon",
         descriptionText = """
@@ -538,7 +541,7 @@ val SignaturePermissionCardData: List<ExpandableHeaderCardData> = listOf(
             It's a powerful permission that can significantly affect the device's behavior.
             It's restricted to apps signed with the system's certificate, ensuring only trusted system apps can make such changes.
             
-            Although restricted it can be overcome via the ADB (android debuging bridge) which is why it's crucial to only download apps from trusted sources
+            Although restricted it can be overcome via the ADB (android debugging bridge) which is why it's crucial to only download apps from trusted sources
         """.trimIndent(),
         linkData = LinkButton(
             link = "https://developer.android.com/reference/android/Manifest.permission#WRITE_SETTINGS",
@@ -586,9 +589,86 @@ val SignaturePermissionCardData: List<ExpandableHeaderCardData> = listOf(
     )
 )
 
+val BlogSectionCardData: List<ExpandableHeaderCardData> = listOf(
+    ExpandableHeaderCardData(
+        headerText = "Snapchat",
+        icon = ImageType.Vector(Icons.Filled.CameraAlt),
+        iconContentDescription = "Camera icon",
+        descriptionText = """
 
+        Snapchat's privacy and data abuse allegations have raised significant concerns regarding the protection of user information and the ethical use of internal tools. Reports indicate that some former employees have exploited internal tools, such as SnapLion, to access privileged user data without authorization. This alleged misuse included breaching sensitive information like location data and accessing saved photos and videos. The existence of SnapLion, previously undisclosed, has sparked questions about the extent of internal access to user data within Snapchat.
 
+        Moreover, the introduction of new features like live location sharing has added fuel to the fire of privacy concerns. While touted as a safety measure, experts argue that allowing Snapchat access to users' personal information, particularly their real-time location poses significant risks. Internet privacy advocates have highlighted the potential for misuse of such data by social media companies for marketing purposes, despite Snapchat's assurances to the contrary.
 
+        The Snap Maps feature on Snapchat allows users to track their friends' live locations and view images and videos posted by strangers around the world on a map interface. However, concerns have been raised about the potential dangers associated with this feature. A cyber expert warns that it could facilitate revenge porn, cyber-bullying, stalking, and domestic violence. Recently, a group of boys reportedly used Snap Maps to gatecrash a party in Melbourne, where a young girl was allegedly assaulted by one of the intruders. This incident highlights the risks associated with the live-tracking feature, particularly in terms of privacy and safety concerns.
 
+        Critics have labelled Snapchat as a "surveillance capitalist company," emphasizing its reliance on user data for profit generation. Concerns about the company's intentions and data-handling practices are further compounded by its opaque privacy policies and terms of service, which often employ vague language to justify extensive data-collection practices. The lack of transparency regarding how user data is utilized and shared raises alarms about potential violations of user privacy and consent.
 
+        In addition to allegations of internal data access abuses, Snapchat's collection and use of various forms of user data, including location information, content shared, and camera access, have come under scrutiny. While Snapchat claims to prioritize data minimization and user control over their information, concerns persist about the scope and purpose of data collection, as well as the adequacy of safeguards against unauthorized access and misuse.
+       
+        References:
+       
+        Amore, S. (2022, November 14). A Breakdown of the Data Snapchat Collects on Users. dot.LA. https://dot.la/what-data-does-snapchat-collect-2658631894
 
+        Cox, J. (2019, May 23). Snapchat Employees Abused Data Access to Spy on Users. Vice. https://www.vice.com/en/article/xwnva7/snapchat-employees-abused-data-access-spy-on-users-snaplion
+
+        Simonetti, I. (2022, March 2). The Hidden Costs of Snapchat’s New Safety Feature. Observer. https://observer.com/2022/03/the-hidden-costs-of-snapchats-new-safety-feature/
+
+        Tindale, A. (2021, March 17). The app being used by domestic violence perpetrators, stalkers and party gatecrashers - and chances are the children in your life have it. Daily Mail. https://www.dailymail.co.uk/news/article-9370397/Safety-concerns-Snapchat-feature-Snap-Maps-experts-say-turn-Ghost-Mode-prevent-stalking
+        
+        Note: AI was used to improve the quality of writing.
+        """.trimIndent(),
+    ),
+    ExpandableHeaderCardData(
+        headerText = "Facebook",
+        icon = ImageType.Vector(Icons.Filled.Facebook),
+        iconContentDescription = "Facebook icon",
+        descriptionText = """
+ 
+        Facebook's journey from its inception in 2004 to becoming a global social media behemoth has been marred by a series of privacy controversies. Despite its exponential growth and massive user base, the company has repeatedly found itself embroiled in debates over its handling of user data and privacy concerns. From its early days to recent times, Facebook has faced criticism, regulatory scrutiny, and user backlash over various privacy issues.
+
+        In its infancy, Facebook introduced the News Feed feature in 2006, aiming to streamline user experience by curating updates from friends into a centralized feed. However, the move sparked outrage among users who felt their privacy was compromised as personal activities were broadcast without their consent. Despite protests and criticism, Facebook stood firm, emphasizing its commitment to improving user experience and weathered the storm.
+
+        Facebook's first significant brush with advertising privacy issues came with Beacon in 2007. This program allowed companies to track purchases made by Facebook users and share them with their friends without explicit consent. Facing backlash, Zuckerberg issued an apology and offered users the option to opt-out.
+
+        In 2011, Facebook settled with the Federal Trade Commission (FTC) over charges of deceptive privacy practices. The company failed to uphold its promises regarding user privacy, allowing third-party apps access to vast amounts of personal data without proper consent. The settlement mandated Facebook to undergo regular privacy evaluations, signalling increased regulatory scrutiny of the platform's data practices.
+
+        Facebook's track record continued to raise eyebrows with incidents like a bug exposing private contact information and controversial mood manipulation experiments on users' news feeds. These events underscored the challenges of safeguarding user data and maintaining ethical standards in research practices
+
+        The implementation of Europe's General Data Protection Regulation (GDPR) in 2018 forced Facebook to adapt its privacy policies to comply with stringent data protection laws. Legal battles, such as the Belgian court ordering Facebook to stop tracking users across the internet, further highlighted the global scrutiny of the company's data collection practices.
+
+        The Cambridge Analytica scandal in 2018 exposed Facebook's lax oversight of third-party app data access, leading to public outcry and Zuckerberg's public apology. Amid mounting pressure, Facebook pledged to investigate and restrict app permissions, promising greater transparency and user control over data access.
+
+        In 2019, Facebook faced a double blow to its reputation as revelations surfaced regarding its questionable data practices. Business Insider uncovered a privacy breach where the platform harvested the email contacts of 1.5 million users without their consent, raising concerns about data misuse and security protocols. Concurrently, leaked documents reported by NBC implicated Mark Zuckerberg and Facebook's senior management in using user data as leverage over companies, either granting or denying access based on commercial interests.
+        
+        References:
+        
+        Doffman, Z. (2019, April 18). 1.5m Users Hit By New Facebook Privacy Breach As Extent Of Data Misuse Exposed. Forbes. https://www.forbes.com/sites/zakdoffman/2019/04/18/facebook-illegally-harvested-data-from-1-5m-users-as-it-leveraged-its-data-machine/?sh=1cbd33c86a2e
+
+        Newcomb, A. (2018, March 24). A timeline of Facebook's privacy issues — and its responses. NBC News. https://www.nbcnews.com/tech/social-media/timeline-facebook-s-privacy-issues-its-responses-n859651
+        
+        Note: AI was used to improve the quality of writing.
+        """.trimIndent(),
+    ),
+    ExpandableHeaderCardData(
+        headerText = "X (Formerly Twitter)",
+        icon = ImageType.Vector(Icons.Filled.Cancel),
+        iconContentDescription = "X icon",
+        descriptionText = """
+   
+        In the wake of Elon Musk's staggering ${'$'}44 billion acquisition of X (formerly known as Twitter), the social media platform finds itself under intense scrutiny once again, this time centred around its long-standing issues with data privacy and security breaches.
+
+        X's troubled history with data protection comes to the forefront, marked by a series of missteps and breaches that have eroded user trust over the years. From exposing sensitive user data such as tweets, likes, email addresses, and phone numbers to leveraging this information for targeted ads without proper consent, the platform's track record paints a troubling picture of lax security measures and disregard for user privacy.
+        
+        Even before Musk's takeover, X faced significant challenges in rebuilding its tarnished reputation. Earlier fines totalling ${'$'}150 million for mishandling user data underscored the gravity of the situation, revealing a pattern of exploitation under the guise of enhancing security measures. The revelation that over 140 million users unwittingly provided their personal information for security purposes, only to have it used for targeted advertising, further compounds the breach of trust.
+        
+        Moreover, whistleblower revelations shed light on systemic vulnerabilities within X's infrastructure. Thousands of employees were granted unnecessary access to user data, posing a grave risk of exploitation and foreign infiltration. Such revelations not only highlight the company's glaring lack of internal controls but also raise serious concerns regarding the extent of data misuse and the potential for malicious actors to exploit these vulnerabilities. Musk's criticisms of X's encryption practices and calls for heightened security measures offer a glimmer of hope, yet skeptics remain wary of whether these assurances will translate into tangible safeguards for user privacy.
+        
+        References:
+        
+        Wedell, K. (2022, November 2). Musk's Twitter takeover raises more questions than answers about data privacy. USA Today. https://www.usatoday.com/story/tech/2022/11/02/twitters-data-privacy-musk/8242592001/
+        
+        Note: AI was used to improve the quality of writing.
+        """.trimIndent(),
+    ),
+)
