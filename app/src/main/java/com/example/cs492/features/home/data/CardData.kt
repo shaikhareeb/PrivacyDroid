@@ -450,10 +450,17 @@ val DangerousPermissionCardData: List<ExpandableHeaderCardData> = listOf(
             This permission is essential for voice recording apps, communication apps supporting voice calls, and various other functionalities requiring audio recording. 
             However, misuse of this permission could involve apps recording audio without user consent, potentially compromising user privacy by eavesdropping on conversations or capturing sensitive information. 
             Ensure apps requesting microphone access have a legitimate need for it.
+            
+            An instance where this permission was abused was the iRecorder app that given an update was seen to have malicious code by google. 
+            This allowed the bad actors to make secret recordings, along with transferring images and videos without the user's knowledge
         """.trimIndent(),
         linkData = LinkButton(
             link = "https://developer.android.com/reference/android/Manifest.permission#RECORD_AUDIO",
             buttonText = "Read documentation"
+        ),
+        linkDataUrl = LinkButton(
+            link = "https://thehill.com/homenews/nexstar_media_wire/4027096-check-your-phone-popular-android-app-reportedly-started-spying-on-users-making-recordings/",
+            buttonText = "Case of Abuse in Article"
         )
     ),
     // Read/Write Contacts
@@ -470,10 +477,19 @@ val DangerousPermissionCardData: List<ExpandableHeaderCardData> = listOf(
             This permission is essential for apps that manage contact information, such as contact managers, dialer apps, and messaging apps. 
             However, misuse of this permission could involve apps accessing sensitive contact information without user consent, potentially leading to privacy breaches or unauthorized use of contact data. 
             Grant contact access only to trusted applications with a legitimate need for it.
+            
+            It's important to be diligent to know what features are required to use an app, the best recommendation is to refuse all and see what functionality the app loses.
+            An interesting case to look into further is with Fortnite, who had READ/WRITE permissions on many of their game-installer apps even when it was not required.
+            Read more about it below
+            
         """.trimIndent(),
         linkData = LinkButton(
             link = "https://developer.android.com/reference/android/Manifest.permission#READ_CONTACTS",
             buttonText = "Read documentation"
+        ),
+        linkDataUrl = LinkButton(
+            link = "https://www.top10vpn.com/research/fortnite-android-app-investigation-spyware-risks/",
+            buttonText = "Unneeded permission usage in fortnite"
         )
     ),
     // Send/Receive SMS

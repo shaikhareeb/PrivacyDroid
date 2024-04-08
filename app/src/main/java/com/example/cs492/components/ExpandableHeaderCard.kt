@@ -4,6 +4,7 @@ import android.content.Intent
 import android.provider.Settings
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -48,7 +49,8 @@ data class ExpandableHeaderCardData(
     val descriptionText: String? = null,
     val pageData: ScreenButton? = null,
     val linkData: LinkButton? = null,
-    val annotatedText: AnnotatedString? = null
+    val annotatedText: AnnotatedString? = null,
+    val linkDataUrl: LinkButton? = null,
 )
 
 @Composable
@@ -176,6 +178,14 @@ fun ExpandableCard(
                         onClick = { uriHandler.openUri(it.link) },
                         text = it.buttonText
                     )
+                }
+                cardData.linkDataUrl?.let {
+                    Box(modifier = Modifier.padding(vertical = 10.dp)) {
+                        TertiaryButton(
+                            onClick = { uriHandler.openUri(it.link) },
+                            text = it.buttonText
+                        )
+                    }
                 }
             }
         }
