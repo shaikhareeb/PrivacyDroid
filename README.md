@@ -2,6 +2,10 @@
 
 Welcome to PrivacyDroid, your ultimate guide to navigating app permissions, marketplaces, and general security within the Android ecosystem. With PrivacyDroid, you can gain insights into what permissions are necessary, which ones to avoid, and how to keep your Android device secure.
 
+## Demo
+
+https://github.com/shaikhareeb/PrivacyDroid/assets/84348642/53239a7f-5c6e-4b81-bee9-66ac228f31f0
+
 ## Features
 
 - **App Permissions Guide**: Learn about the various permissions apps may request and what they mean for your privacy.
