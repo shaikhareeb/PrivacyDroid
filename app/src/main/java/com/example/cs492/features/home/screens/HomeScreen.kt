@@ -48,7 +48,7 @@ fun HomeScreen(
                     )
                     Text(
                         modifier = Modifier.padding(20.dp),
-                        text = "Privacy Helper",
+                        text = "PrivacyDroid",
                         fontSize = 25.sp,
                         fontWeight = FontWeight.Medium
                     )

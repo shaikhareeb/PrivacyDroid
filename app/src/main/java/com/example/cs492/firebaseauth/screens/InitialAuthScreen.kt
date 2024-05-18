@@ -41,7 +41,7 @@ fun InitialAuthScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 StandardText(value = "Welcome to the app")
-                StandardText(value = "Privacy Helper")
+                StandardText(value = "PrivacyDroid")
                 StandardText(value = "Take hold of your privacy")
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.privacy_tip_24),

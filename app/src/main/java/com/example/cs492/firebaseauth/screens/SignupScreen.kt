@@ -102,7 +102,7 @@ fun SignupScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 StandardText(value = "Welcome Back")
-                StandardText(value = "Privacy Helper - Sign up")
+                StandardText(value = "PrivacyDroid - Sign up")
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.privacy_tip_24),
                     contentDescription = "App Logo",

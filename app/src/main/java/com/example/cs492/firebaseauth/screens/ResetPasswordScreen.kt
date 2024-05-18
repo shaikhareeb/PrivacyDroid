@@ -83,7 +83,7 @@ fun ResetPasswordScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 StandardText(value = "Looks like you forgot something")
-                StandardText(value = "Privacy Helper - Forgot Password")
+                StandardText(value = "PrivacyDroid - Forgot Password")
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.privacy_tip_24),
                     contentDescription = "App Logo",

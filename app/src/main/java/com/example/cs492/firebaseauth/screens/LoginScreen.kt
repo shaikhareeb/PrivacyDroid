@@ -90,7 +90,7 @@ fun LoginScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 StandardText(value = "Welcome back")
-                StandardText(value = "Privacy Helper - Log in")
+                StandardText(value = "PrivacyDroid - Log in")
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.privacy_tip_24),
                     contentDescription = "App Logo",
